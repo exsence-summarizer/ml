@@ -5,7 +5,7 @@ from transformers import pipeline
 app = FastAPI()
 
 
-summarizer = pipeline("summarization")
+
 
 
 # sample home page
@@ -17,6 +17,7 @@ def index():
 # Summarize the text
 @app.get("/summarize")
 async def summarize(text: str):
+    summarizer = pipeline("summarization")
     output = summarizer(text, max_length=150, min_length=100, do_sample=True)
     # output = "This is a sample summary " + text
     return output

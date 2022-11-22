@@ -1,9 +1,10 @@
 import uvicorn
 from fastapi import FastAPI
-# from transformers import pipeline
+from transformers import pipeline
 # load api
 app = FastAPI()
 
+summarizer = pipeline("summarization")
 
 
 
@@ -17,9 +18,8 @@ def index():
 # Summarize the text
 @app.get("/summarize")
 async def summarize(text: str):
-    # summarizer = pipeline("summarization")
-    # output = summarizer(text, max_length=150, min_length=100, do_sample=True)
-    output = "This is a sample summary " + text
+    output = summarizer(text, max_length=150, min_length=100, do_sample=True)
+    # output = "This is a sample summary " + text
     return output
 
 

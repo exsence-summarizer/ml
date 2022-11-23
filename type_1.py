@@ -14,11 +14,7 @@ def summarize_text(text):
     for sentence in summary:
      text_summary += str(sentence)
 
-    return {
-        'summary': text_summary,
-        'length_before': len(text),
-        'length_after': len(text_summary)
-    }
+    return text_summary
 
 # text = "my name is shubham kumar shukla. It is my pleasure to got opportunity to write article for xyz related to nlp"
 # summarize_text(text)

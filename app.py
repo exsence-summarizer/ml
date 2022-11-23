@@ -16,16 +16,7 @@ def index():
 async def summarize(text: str):
     output = summarize_text(text)
     # output = "This is a sample summary " + text
-    return {
-        "statusCode": 200,
-        "headers": {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": True,
-            "Access-Control-Allow-Headers": "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale",
-            "Access-Control-Allow-Methods": "POST, OPTIONS"
-        },
-        "body": output
-    }
+    return output
 
 
 if __name__ == '__main__':

@@ -1,8 +1,43 @@
-from transformers import pipeline
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize, sent_tokenize
+import pandas as pd
+import numpy as np
+data = "my name is shubham kumar shukla. It is my pleasure to got opportunity to write article for xyz related to nlp"
 
 
-summarizer = pipeline("summarization")
+def solve(text):
+    stopwords1 = set(stopwords.words("english"))
 
-text = "Despite the fact that piranhas are relatively harmless, many people continue to believe the pervasive myth that piranhas are dangerous to humans. This impression of piranhas is exacerbated by their mischaracterization in popular media. For example, the promotional poster for the 1978 horror film Piranha features an oversized piranha poised to bite the leg of an unsuspecting woman. Such a terrifying representation easily captures the imagination and promotes unnecessary fear. While the trope of the man-eating piranhas lends excitement to the adventure stories, it bears little resemblance to the real-life piranha. By paying more attention to fact than fiction, humans may finally be able to let go of this inaccurate belief."
-output = summarizer(text, max_length=150, min_length=100, do_sample=True)
-print(output)
+    words = word_tokenize(text)
+    freqTable = {}
+    for word in words:
+        word = word.lower()
+        if word in stopwords1:
+            continue
+    if word in freqTable:
+        freqTable[word] += 1
+    else:
+        freqTable[word] = 1
+
+    sentences = sent_tokenize(text)
+    sentenceValue = {}
+    for sentence in sentences:
+        for word, freq in freqTable.items():
+            if word in sentence.lower():
+                if sentence in sentenceValue:
+                    sentenceValue[sentence] += freq
+    else:
+        sentenceValue[sentence] = freq
+    sumValues = 0
+    for sentence in sentenceValue:
+        sumValues += sentenceValue[sentence]
+    average = int(sumValues / len(sentenceValue))
+
+    summary = ''
+    for sentence in sentences:
+        if (sentence in sentenceValue) and (sentenceValue[sentence] > (1.2 * average)):
+            summary += "" + sentence
+    return summary
+
+result = solve(data)
+print(result)

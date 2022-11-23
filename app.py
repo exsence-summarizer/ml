@@ -1,6 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
-from test2 import summarize_text
+from type_1 import summarize_text
 # load api
 app = FastAPI()
 

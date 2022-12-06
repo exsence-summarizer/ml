@@ -4,12 +4,13 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.text_rank import TextRankSummarizer
 
 
-def summarize_text(text):
+def summarize_text(text, n):
+    
     # Creating text parser using tokenization
     parser = PlaintextParser.from_string(text, Tokenizer("english"))
     # Summarize using sumy TextRank
     summarizer = TextRankSummarizer()
-    summary = summarizer(parser.document, 5)
+    summary = summarizer(parser.document, n)
 
     text_summary = ""
     for sentence in summary:

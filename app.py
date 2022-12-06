@@ -24,8 +24,9 @@ def index():
 
 # Summarize the text
 @app.get("/summarize")
-async def summarize(text: str):
-    output = summarize_text(text)
+async def summarize(text: str, n:int):
+    #n is the number of lines to be returned
+    output = summarize_text(text, n)
     return output
 
 

@@ -25,7 +25,6 @@ def index():
 @app.get("/summarize")
 async def summarize(text: str):
     output = summarize_text(text)
-    # output = "This is a sample summary " + text
     return output
 
 

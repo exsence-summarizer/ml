@@ -9,7 +9,7 @@ def summarize_text(text):
     parser = PlaintextParser.from_string(text, Tokenizer("english"))
     # Summarize using sumy TextRank
     summarizer = TextRankSummarizer()
-    summary = summarizer(parser.document, 2)
+    summary = summarizer(parser.document, 5)
 
     text_summary = ""
     for sentence in summary:

@@ -22,7 +22,7 @@ def index():
     return {'message': 'Hello, World'}
 
 
-Summarize the text
+# Summarize the text
 @app.get("/summarize")
 async def summarize(text: str, n:int):
     #n is the number of lines to be returned

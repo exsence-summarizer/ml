@@ -2,7 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from type_1 import summarize_text
+# from type_1 import summarize_text
 # load api
 app = FastAPI()
 
@@ -23,11 +23,11 @@ def index():
 
 
 # Summarize the text
-@app.get("/summarize")
-async def summarize(text: str, n:int):
-    #n is the number of lines to be returned
-    output = summarize_text(text, n)
-    return output
+# @app.get("/summarize")
+# async def summarize(text: str, n:int):
+#     #n is the number of lines to be returned
+#     output = summarize_text(text, n)
+#     return output
 
 
 if __name__ == '__main__':

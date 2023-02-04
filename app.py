@@ -29,7 +29,7 @@ def index():
 #     output = summarize_text(text, n)
 #     return output
 
-
+print("Hello");
 # if __name__ == '__main__':
 #     uvicorn.run(app, host='127.0.0.1', port=8000)
 

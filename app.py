@@ -7,13 +7,13 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["*"],
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # sample home page
@@ -22,12 +22,12 @@ def index():
     return {'message': 'Hello, World'}
 
 
-# Summarize the text
-# @app.get("/summarize")
-# async def summarize(text: str, n:int):
-#     #n is the number of lines to be returned
-#     output = summarize_text(text, n)
-#     return output
+Summarize the text
+@app.get("/summarize")
+async def summarize(text: str, n:int):
+    #n is the number of lines to be returned
+    output = summarize_text(text, n)
+    return output
 
 print("Hello");
 # if __name__ == '__main__':

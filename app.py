@@ -2,7 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# from type_1 import summarize_text
+from type_1 import summarize_text
 # load api
 app = FastAPI()
 

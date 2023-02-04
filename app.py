@@ -29,8 +29,8 @@ async def summarize(text: str, n:int):
     output = summarize_text(text, n)
     return output
 
-print("Hello");
-# if __name__ == '__main__':
-#     uvicorn.run(app, host='127.0.0.1', port=8000)
+# print("Hello");
+if __name__ == '__main__':
+    uvicorn.run(app, host='127.0.0.1', port=8000)
 
 # uvicorn app:app --reload

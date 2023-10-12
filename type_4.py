@@ -15,12 +15,3 @@ def summarize_to_words(text):
 
 summary = summarize_to_words(text)
 print(summary)
-
-
-curl https://api.openai.com/v1/chat/completions \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer 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" \
-  -d '{
-    "model": "gpt-3.5-turbo",
-    "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "Hello!"}]
-  }'

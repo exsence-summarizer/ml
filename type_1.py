@@ -17,11 +17,3 @@ def summarize_text(text, n):
         text_summary += str(sentence)
 
     return text_summary
-
-
-text = """
-The patient has been diagnosed with Type 1 Diabetes, an autoimmune condition characterized by the body's inability to produce insulin, resulting in high blood sugar levels
-"""
-
-
-print(summarize_text(text, 1))

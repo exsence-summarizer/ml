@@ -26,14 +26,9 @@ def index():
 @app.get("/summarize")
 async def summarize(text: str, n:int):
     #n is the number of lines to be returned
-    output = ""
-
-    try:
-        output = summarize_text(text, n)
-    except:
-        output = "Error"
-
+    output = summarize_text(text, n)
     
+    return output
 
 # print("Hello");
 if __name__ == '__main__':

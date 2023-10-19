@@ -3,6 +3,10 @@ from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.text_rank import TextRankSummarizer
 
+# Downloading punkt sentence tokenizer
+import nltk
+nltk.download('punkt')
+
 
 def summarize_text(text, n):
     
